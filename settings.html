@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tənzimləmələr - Soul TV</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css"> </head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://5000-i3miwxc7qluosrsbo3mh6-2e2b5a6d.manus.computer/static/images/logo.svg" alt="Soul TV Logo">
+                <h1>SOUL TV</h1>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Səhifə</a></li>
+                <li><a href="#">Filmlər</a></li>
+                <li><a href="#">Seriallar</a></li>
+                <li><a href="#">Canlı TV</a></li>
+                <li><a href="#">Yeni</a></li>
+            </ul>
+            
+            <div class="search-profile">
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Axtar...">
+                </div>
+                
+                <div class="profile-menu">
+                    <img src="https://via.placeholder.com/35x35/cccccc/000000?text=U" alt="Profil" class="profile-img">
+                    
+                    <div class="profile-dropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>Profilim</span>
+                        </a>
+                        <a href="lists.html" class="dropdown-item">
+                            <i class="fas fa-bookmark"></i>
+                            <span>Siyahılarım</span>
+                        </a>
+                        <a href="settings.html" class="dropdown-item active"> <i class="fas fa-cog"></i>
+                            <span>Tənzimləmələr</span>
+                        </a>
+                        <a href="#" class="dropdown-item" id="logout-button">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Çıxış</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container settings-page-container">
+        <h2 class="section-title">Tənzimləmələr</h2>
+
+        <div class="settings-sections">
+            <section class="settings-section">
+                <h3><i class="fas fa-user-cog"></i> Hesab Tənzimləmələri</h3>
+                <form id="account-settings-form">
+                    <div class="form-group">
+                        <label for="setting-email">E-poçt ünvanı:</label>
+                        <input type="email" id="setting-email" name="email" value="istifadeci@example.com" disabled> 
+                        </div>
+                    <div class="form-group">
+                        <label for="setting-current-password">Cari Parol:</label>
+                        <input type="password" id="setting-current-password" name="currentPassword" placeholder="Parol dəyişmək üçün daxil edin">
+                    </div>
+                    <div class="form-group">
+                        <label for="setting-new-password">Yeni Parol:</label>
+                        <input type="password" id="setting-new-password" name="newPassword" placeholder="Ən az 8 simvol">
+                    </div>
+                    <div class="form-group">
+                        <label for="setting-confirm-password">Yeni Parolu Təsdiqləyin:</label>
+                        <input type="password" id="setting-confirm-password" name="confirmPassword" placeholder="Yeni parolu təkrar daxil edin">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Parolu Dəyiş</button>
+                </form>
+            </section>
+
+            <section class="settings-section">
+                <h3><i class="fas fa-bell"></i> Bildiriş Tənzimləmələri</h3>
+                <form id="notification-settings-form">
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="notif-new-releases" name="newReleases" checked>
+                        <label for="notif-new-releases">Yeni filmlər və seriallar haqqında bildiriş al</label>
+                    </div>
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="notif-promotions" name="promotions">
+                        <label for="notif-promotions">Xüsusi təkliflər və endirimlər haqqında bildiriş al</label>
+                    </div>
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="notif-newsletter" name="newsletter" checked>
+                        <label for="notif-newsletter">Həftəlik xəbər bülleteninə abunə ol</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Bildirişləri Yadda Saxla</button>
+                </form>
+            </section>
+
+            <section class="settings-section">
+                <h3><i class="fas fa-sliders-h"></i> Yayım Tənzimləmələri</h3>
+                <form id="playback-settings-form">
+                    <div class="form-group">
+                        <label for="setting-video-quality">Standart Video Keyfiyyəti:</label>
+                        <select id="setting-video-quality" name="videoQuality">
+                            <option value="auto" selected>Avtomatik</option>
+                            <option value="1080p">Full HD (1080p)</option>
+                            <option value="720p">HD (720p)</option>
+                            <option value="480p">SD (480p)</option>
+                        </select>
+                    </div>
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="setting-autoplay-next" name="autoplayNext" checked>
+                        <label for="setting-autoplay-next">Növbəti seriyanı avtomatik başlat</label>
+                    </div>
+                     <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Yayım Ayarlarını Yadda Saxla</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                     <img src="https://5000-i3miwxc7qluosrsbo3mh6-2e2b5a6d.manus.computer/static/images/logo.svg" alt="Soul TV Logo">
+                    <h2>SOUL TV</h2>
+                </div>
+                <p>Ən yaxşı film və seriallar bir platformada.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+             <div class="footer-section">
+                <h3>Naviqasiya</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Səhifə</a></li>
+                    <li><a href="#">Filmlər</a></li>
+                    <li><a href="#">Seriallar</a></li>
+                    <li><a href="#">Canlı TV</a></li>
+                    <li><a href="#">Yeni</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kateqoriyalar</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Komediya</a></li>
+                    <li><a href="#">Dram</a></li>
+                    <li><a href="#">Fantastika</a></li>
+                    <li><a href="#">Triller</a></li>
+                    <li><a href="#">Sənədli</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Haqqımızda</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Şirkət</a></li>
+                    <li><a href="#">Əlaqə</a></li>
+                    <li><a href="#">Karyera</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Şərtlər</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Soul TV. Bütün hüquqlar qorunur.
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script> 
+</body>
+</html>

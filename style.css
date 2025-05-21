@@ -1,0 +1,1379 @@
+/* Soul TV - Main Stylesheet */
+:root {
+  --primary-black: #0b0c10; /* Biraz daha yumşaq qara */
+  --primary-white: #ffffff;
+  --dark-gray: #1f2833;   /* Tünd göyə çalan boz */
+  --medium-gray: #45a29e; /* Əsas aksent rəngi (keçmiş) - indi daha çox boz tonlar */
+  --medium-gray-alt: #3a3f44; /* Orta boz */
+  --light-gray: #c5c6c7;  /* Açıq boz (mətnlər üçün) */
+  --accent-color: #66fcf1; /* Əsas aksent rəngi (cyan) */
+  --accent-color-darker: #4fbdba; /* Aksentin tünd variantı */
+  --highlight: #f5f5f5;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --gradient-dark: linear-gradient(to bottom, var(--dark-gray), var(--primary-black));
+  --font-main: 'Montserrat', sans-serif;
+  --font-secondary: 'Raleway', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--primary-black);
+  color: var(--light-gray); /* Əsas mətn rəngi */
+  line-height: 1.6;
+}
+
+/* --- Header Styles --- */
+.header {
+  background: var(--dark-gray); /* Qradient əvəzinə solid rəng */
+  padding: 0.8rem 0; /* Padding-i biraz azaltdıq */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Əgər A teqi olsa */
+  color: var(--primary-white);
+}
+
+.logo img {
+  height: 38px; /* Biraz kiçik loqo */
+  margin-right: 12px;
+}
+
+.logo h1 {
+  font-family: var(--font-secondary);
+  font-size: 1.7rem; /* Biraz kiçik başlıq */
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--primary-white);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 1.8rem; /* Linklər arası boşluq */
+}
+
+.nav-links a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent; /* Hover üçün yer */
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.search-profile {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  position: relative;
+  margin-right: 1.5rem;
+}
+
+.search-bar input {
+  background-color: var(--medium-gray-alt);
+  border: 1px solid var(--dark-gray);
+  border-radius: 20px;
+  padding: 0.6rem 1rem 0.6rem 2.8rem; /* Padding-i artırdıq */
+  color: var(--primary-white);
+  width: 200px;
+  transition: width 0.4s ease-in-out, background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.search-bar input::placeholder {
+    color: var(--light-gray);
+    opacity: 0.7;
+}
+
+.search-bar input:focus {
+  outline: none;
+  width: 280px; /* Fokusda daha geniş */
+  background-color: var(--primary-black);
+  border-color: var(--accent-color);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px; /* İkonu biraz sağa */
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--light-gray);
+  font-size: 0.9rem;
+}
+
+.profile-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-color-darker);
+  transition: transform 0.3s ease;
+}
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Main Content Area --- */
+.main-container {
+  margin-top: 70px; /* Header hündürlüyünə uyğun (padding-top da ola bilər) */
+  padding: 2rem 1.5rem; /* Yan boşluqları azaltdıq */
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  height: 65vh;
+  margin-bottom: 3rem;
+  border-radius: 12px; /* Daha yumşaq kənarlar */
+  overflow: hidden;
+  background-color: var(--dark-gray);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem;
+  background: linear-gradient(to top, rgba(11,12,16,0.95) 25%, rgba(11,12,16,0.7) 60%, transparent);
+}
+
+.hero-title {
+  font-family: var(--font-secondary);
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-white);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  max-width: 650px;
+  color: var(--light-gray);
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.btn {
+  padding: 0.9rem 1.8rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  border: none;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-transform: uppercase; /* Böyük hərflər */
+  letter-spacing: 0.5px;
+}
+
+.btn i {
+    font-size: 1.1em;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--primary-black);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color-darker);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 12px rgba(var(--accent-color-rgb, 102, 252, 241), 0.3);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--primary-white);
+  transform: translateY(-3px);
+}
+
+/* --- Section Title --- */
+.section-title {
+  font-family: var(--font-secondary);
+  font-size: 1.8rem;
+  margin-bottom: 1.8rem;
+  font-weight: 700; /* Daha qalın */
+  display: flex;
+  align-items: center;
+  color: var(--primary-white);
+}
+
+.section-title::after {
+  content: '';
+  flex-grow: 1;
+  height: 2px; /* Xətti qalınlaşdırdıq */
+  background-color: var(--medium-gray-alt);
+  margin-left: 1.5rem;
+  opacity: 0.5;
+}
+
+/* --- Categories Section --- */
+.categories-section { /* Kateqoriya bölməsi üçün ümumi wrapper */
+    margin-bottom: 3rem;
+}
+.categories-wrapper, .row-items-wrapper { 
+    position: relative; /* Sürüşdürmə düymələri üçün */
+}
+
+.categories {
+  display: flex;
+  gap: 1.2rem; /* Boşluğu artırdıq */
+  overflow-x: auto;
+  padding-bottom: 1.2rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; /* Firefox üçün */
+  scrollbar-color: var(--medium-gray-alt) var(--dark-gray); /* Firefox üçün */
+}
+.categories::-webkit-scrollbar { height: 8px; }
+.categories::-webkit-scrollbar-thumb { background-color: var(--medium-gray-alt); border-radius: 4px; }
+.categories::-webkit-scrollbar-track { background-color: var(--dark-gray); }
+
+
+.category-item {
+  min-width: 160px; /* Eni artırdıq */
+  height: 90px; /* Hündürlüyü artırdıq */
+  background-color: var(--medium-gray-alt);
+  border-radius: 10px; /* Daha yuvarlaq */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.category-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  border-color: var(--accent-color-darker);
+}
+
+.category-item.active {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 20px rgba(var(--accent-color-rgb, 102, 252, 241), 0.4);
+  border-color: var(--accent-color);
+}
+
+.category-item.active img {
+  opacity: 1; /* Aktiv olanda şəkli tam göstər */
+  filter: brightness(1.1); /* Bir az parlaqlıq */
+}
+
+.category-item img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5; /* Şəkil şəffaflığı */
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+.category-item:hover img {
+    opacity: 0.7;
+}
+
+.category-item span {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--primary-white);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+}
+
+/* --- Content Rows (Trend, New, Series) --- */
+.content-row {
+  margin-bottom: 3.5rem; /* Bölmələr arası boşluq */
+}
+
+.row-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.8rem; /* Elementlər arası boşluq */
+}
+/* Üfüqi sürüşən məzmun blokları üçün */
+.row-items-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1.2rem;
+    grid-template-columns: unset;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--medium-gray-alt) var(--dark-gray);
+}
+.row-items-scroll::-webkit-scrollbar { height: 8px; }
+.row-items-scroll::-webkit-scrollbar-thumb { background-color: var(--medium-gray-alt); border-radius: 4px; }
+.row-items-scroll::-webkit-scrollbar-track { background-color: var(--dark-gray); }
+
+.row-items-scroll .content-item {
+    flex: 0 0 auto;
+    width: 240px; /* Üfüqi sürüşmədə elementlərin eni */
+}
+
+.content-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  cursor: pointer;
+  aspect-ratio: 16/9;
+  background-color: var(--medium-gray-alt);
+}
+
+.content-item:hover {
+  transform: scale(1.06) translateY(-7px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  z-index: 5;
+}
+
+.content-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.content-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(11,12,16,0.98) 30%, transparent);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.content-item:hover .content-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-title {
+  font-size: 1rem; /* Başlıq ölçüsü */
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--primary-white);
+}
+
+.content-meta {
+  font-size: 0.85rem;
+  color: var(--light-gray);
+}
+
+/* --- Live TV Section --- */
+.live-tv-section {
+  margin-bottom: 3.5rem;
+}
+
+.live-channels {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem;
+}
+
+.live-channel {
+  background-color: var(--dark-gray);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  border: 1px solid var(--medium-gray-alt);
+}
+
+.live-channel:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 7px 20px rgba(0,0,0,0.4);
+  border-color: var(--accent-color-darker);
+}
+
+.channel-preview {
+  position: relative;
+  aspect-ratio: 16/9;
+  background-color: var(--medium-gray-alt);
+}
+
+.channel-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.live-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--accent-color);
+  color: var(--primary-black);
+  padding: 0.35rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.channel-info {
+  padding: 1.2rem;
+}
+
+.channel-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--primary-white);
+}
+
+.channel-program,
+.channel-time {
+  font-size: 0.95rem;
+  color: var(--light-gray);
+}
+.channel-time {
+    font-size: 0.85rem;
+    color: var(--accent-gray);
+    margin-top: 0.4rem;
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: #08090D; /* Daha da tünd fon */
+  padding: 3.5rem 2rem 2rem; /* Üst boşluğu artırdıq, altı azaltdıq */
+  margin-top: 4rem;
+  border-top: 2px solid var(--accent-color-darker);
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3rem;
+}
+.footer-section:first-child { /* Loqo olan bölmə */
+    grid-column: span 1 / span 1; /* Normalda 1 sütun */
+}
+@media (min-width: 992px) { /* Böyük ekranlarda loqo bölməsi daha geniş */
+    .footer-section:first-child {
+        grid-column: span 2 / span 2; /* 2 sütun qədər yer tutsun */
+    }
+    .footer-container { /* Sütun sayını dəyişdiririk */
+        grid-template-columns: repeat(4, 1fr); /* Məsələn 4 sütun */
+    }
+}
+
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.footer-logo img {
+  height: 35px;
+  margin-right: 12px;
+}
+
+.footer-logo h2 {
+  font-family: var(--font-secondary);
+  font-size: 1.6rem;
+  color: var(--primary-white);
+}
+.footer-section p {
+    font-size: 0.95rem;
+    color: var(--light-gray);
+    line-height: 1.8;
+    max-width: 350px; /* Loqo altındakı mətnin enini məhdudlaşdır */
+}
+.footer-section h3 {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-color); /* Footer başlıqları aksent rəngdə */
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--light-gray);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color);
+  padding-left: 6px;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--medium-gray-alt);
+  color: var(--primary-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  font-size: 1.2rem;
+}
+
+.social-icon:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-black);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--medium-gray-alt);
+  color: var(--accent-gray);
+  font-size: 0.9rem;
+}
+
+/* --- Mobile Navigation Specifics --- */
+.mobile-menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--primary-white);
+  padding: 0.5rem;
+  margin-left: 1rem; /* Axtarış/profil ilə arasında boşluq */
+}
+
+/* Mobil menyu açıldıqda (.nav-links.active) */
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Başlığın tam altından */
+    left: 0;
+    width: 100%;
+    background: var(--dark-gray);
+    padding: 0.5rem 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+    z-index: 999;
+    border-top: 1px solid var(--medium-gray-alt);
+}
+.nav-links.active li {
+    margin: 0;
+    width: 100%;
+}
+.nav-links.active a {
+    display: block;
+    padding: 0.9rem 1.5rem; /* Padding-i artırdıq */
+    border-bottom: 1px solid var(--medium-gray-alt);
+    font-size: 1rem;
+    text-align: left; /* Mətni sola düz */
+}
+.nav-links.active li:last-child a {
+    border-bottom: none;
+}
+.nav-links.active a:hover, .nav-links.active a.active {
+    background-color: var(--medium-gray-alt); /* Hover/aktiv üçün fon rəngi */
+    color: var(--accent-color);
+    border-bottom-color: var(--medium-gray-alt); /* Alt xətti fonla eyni et */
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .nav-links { display: none; }
+  .mobile-menu-toggle { display: block; }
+  .search-bar input { width: 160px; }
+  .search-bar input:focus { width: 220px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-description { font-size: 1rem; }
+  .hero-content { padding: 2rem; }
+  .section-title { font-size: 1.6rem; }
+}
+
+@media (max-width: 768px) {
+  .nav-container { padding: 0 1rem; }
+  .search-bar { display: none; } /* Kiçik ekranlarda axtarışı gizlədirik */
+  .profile-menu { margin-left: auto; } /* Profil ikonunu sağa çəkir */
+  .mobile-menu-toggle { margin-left: 0.8rem; }
+  .hero { height: 55vh; }
+  .hero-title { font-size: 1.8rem; }
+  .main-container { padding: 1.5rem 1rem; }
+  .row-items { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1.2rem; }
+  .row-items-scroll .content-item { width: 180px; }
+  .live-channels { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; } /* Footer 2 sütunlu */
+  .footer-section:first-child { grid-column: span 2 / span 2; text-align: center;} /* Loqo bölməsi tam en */
+  .footer-logo, .footer-section p, .social-links { justify-content: center; text-align: center; margin-left:auto; margin-right:auto; }
+}
+
+@media (max-width: 576px) {
+  .main-container { padding: 1rem 0.8rem; }
+  .logo img { height: 32px; margin-right: 8px; }
+  .logo h1 { font-size: 1.4rem; }
+  .hero { height: 45vh; }
+  .hero-title { font-size: 1.4rem; }
+  .hero-description { display: none; }
+  .hero-buttons { flex-direction: column; gap: 0.8rem; }
+  .btn { width: 100%; text-align: center; padding: 0.8rem 1.2rem; font-size: 0.9rem; }
+  .section-title { font-size: 1.4rem; margin-bottom: 1.2rem; }
+  .row-items { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1rem; }
+  .row-items-scroll .content-item { width: 150px; }
+  .live-channels { grid-template-columns: 1fr; }
+  .footer-container { grid-template-columns: 1fr; text-align: center; }
+  .footer-section h3 { margin-bottom: 1rem; }
+}
+
+/* --- User Profile Dropdown --- */
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px); /* Biraz daha aşağı */
+  right: 0;
+  background-color: var(--dark-gray);
+  border-radius: 8px;
+  width: 230px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px) scale(0.98);
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+  border: 1px solid var(--medium-gray-alt);
+}
+
+.profile-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.dropdown-item {
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: var(--light-gray);
+  font-size: 0.9rem;
+}
+.dropdown-item:not(:last-child) {
+    border-bottom: 1px solid var(--medium-gray-alt);
+}
+.dropdown-item:hover {
+  background-color: var(--accent-color-darker);
+  color: var(--primary-black);
+}
+.dropdown-item i {
+  font-size: 1rem;
+  color: var(--accent-color); /* İkonlar aksent rəngdə */
+  width: 22px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+.dropdown-item:hover i {
+    color: var(--primary-black);
+}
+
+/* --- Modal Styles --- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11, 12, 16, 0.9); /* primary-black-in şəffaf variantı */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  padding: 1rem;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: var(--dark-gray);
+  border-radius: 12px;
+  width: 95%;
+  max-width: 850px; /* Biraz daha geniş modal */
+  max-height: 90vh;
+  overflow: hidden; /* Daxili scroll üçün pleyer və məlumat paneli ayrıca scroll olacaq */
+  display: flex;
+  flex-direction: column; /* Pleyer yuxarıda, məlumat aşağıda */
+  position: relative;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Sıçrayış effekti */
+}
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--light-gray);
+  transition: color 0.2s ease, transform 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  z-index: 10; /* Məlumat panelindən yuxarıda */
+}
+
+.modal-close:hover {
+  color: var(--accent-color);
+  transform: rotate(180deg) scale(1.1);
+}
+
+.video-player { /* Həm video, həm də canlı TV pleyeri üçün */
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: var(--primary-black);
+  position: relative;
+  /* Kənarları modal-content-ə uyğun olaraq yuvarlaqlaşdırmaq lazım deyil, çünki modal-content overflow:hidden; */
+}
+.video-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 200px; /* Minimum hündürlük (əgər aspect-ratio işləməsə) */
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    text-align: center;
+    padding: 1rem;
+}
+.video-placeholder .loading-spinner {
+    margin-bottom: 1.2rem; /* Spinner ilə mətn arasında boşluq */
+}
+.video-placeholder p {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--light-gray);
+}
+.modal-info-panel { /* Modal pəncərədə video/kanal məlumatları üçün */
+    padding: 1.5rem 1.8rem;
+    background-color: var(--dark-gray); /* Pleyerdən fərqli olması üçün (əgər pleyer qara deyilsə) */
+    overflow-y: auto; /* Çox mətn olarsa scroll */
+    flex-grow: 1; /* Qalan yeri tutsun */
+}
+.modal-info-panel h2 {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--accent-color);
+}
+.modal-info-panel p {
+    font-size: 0.95rem;
+    color: var(--light-gray);
+    line-height: 1.7;
+}
+
+
+/* --- Loading Animation (Spinner) --- */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  width: 100%;
+}
+
+.loading-spinner {
+  width: 45px; /* Spinner ölçüsü */
+  height: 45px;
+  border: 5px solid rgba(var(--accent-color-rgb, 102, 252, 241), 0.25);
+  border-left-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--primary-black); /* Track fonu */
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--medium-gray-alt);
+  border-radius: 5px;
+  border: 2px solid var(--primary-black); /* Thumb ətrafında track rəngində border */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color-darker);
+}
+
+/* --- Horizontal Scroll Buttons (JS əlavə edir) --- */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15; /* Digər elementlərin üzərində */
+    background-color: rgba(31, 40, 51, 0.8); /* var(--dark-gray) şəffaf variantı */
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color-darker);
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.4);
+    opacity: 0.7; /* Başlanğıcda biraz şəffaf */
+}
+/* Scroll edilə bilən konteynerin üzərinə gəldikdə düymələr görünsün */
+.categories-wrapper:hover .scroll-btn,
+.row-items-wrapper:hover .scroll-btn {
+    opacity: 1;
+}
+
+.scroll-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-black);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 9px rgba(var(--accent-color-rgb,102,252,241),0.3);
+    opacity: 1;
+}
+.scroll-btn:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+.scroll-left {
+    left: -21px; /* Yarısı qədər kənara çıxsın */
+}
+
+.scroll-right {
+    right: -21px; /* Yarısı qədər kənara çıxsın */
+}
+/* Konteynerin özündə padding olmalıdır ki, düymələr içəri girməsin */
+.categories, .row-items-scroll {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+/* Axtarış və Kateqoriya nəticələri üçün konteynerlər (JS yaradır) */
+.search-results-container, .category-results-container {
+    padding: 1rem 0; /* Üst və alt boşluq */
+}
+
+/* ... (mövcud CSS kodlarınız) ... */
+
+/* --- Profile Page Specific Styles --- */
+.profile-page-container .section-title {
+    margin-bottom: 2rem; /* Profil başlığı üçün daha çox boşluq */
+}
+
+.profile-details {
+    display: flex;
+    gap: 2.5rem;
+    background-color: var(--dark-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.profile-picture-section {
+    flex-basis: 200px; /* Şəkil bölməsinin eni */
+    text-align: center;
+}
+
+#profile-page-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color-darker);
+    margin-bottom: 1rem;
+}
+
+.profile-info-section {
+    flex-grow: 1; /* Qalan yeri tutsun */
+}
+
+.info-item {
+    margin-bottom: 1.5rem;
+}
+
+.info-item label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--accent-gray);
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-item p { /* Məlumatın göstərildiyi paraqraf */
+    font-size: 1.1rem;
+    color: var(--light-gray);
+    padding: 0.5rem 0;
+}
+
+.info-item input[type="text"],
+.info-item input[type="email"] { /* Redaktə üçün input sahələri */
+    width: 100%;
+    padding: 0.7rem 1rem;
+    background-color: var(--medium-gray-alt);
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    color: var(--primary-white);
+    font-size: 1rem;
+    font-family: var(--font-main);
+}
+.info-item input[type="text"]:focus,
+.info-item input[type="email"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: var(--primary-black);
+}
+
+
+.profile-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-small { /* Şəkil dəyişmə düyməsi üçün kiçik ölçü */
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+}
+.btn-light { /* Ləğv et düyməsi üçün stil (əgər btn-secondary-dən fərqli olmasını istəyirsinizsə) */
+    background-color: var(--medium-gray-alt);
+    color: var(--light-gray);
+    border: 1px solid var(--accent-gray);
+}
+.btn-light:hover {
+    background-color: var(--accent-gray);
+    color: var(--primary-black);
+}
+
+
+/* Profil səhifəsi üçün adaptivlik */
+@media (max-width: 768px) {
+    .profile-details {
+        flex-direction: column; /* Kiçik ekranlarda alt-alta düz */
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    .profile-picture-section {
+        flex-basis: auto; /* Eni avtomatik olsun */
+        margin-bottom: 1rem;
+    }
+    #profile-page-avatar {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-actions {
+        flex-direction: column; /* Düymələr alt-alta */
+    }
+    .profile-actions .btn {
+        width: 100%; /* Düymələr tam eni tutsun */
+    }
+}
+
+/* ... (mövcud CSS kodlarınız) ... */
+
+/* --- My Lists Page Specific Styles --- */
+.lists-page-container .section-title {
+    margin-bottom: 1.5rem;
+}
+
+.tabs-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.tab-button {
+    background-color: transparent;
+    color: var(--light-gray);
+    border: 1px solid var(--medium-gray-alt);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: var(--medium-gray-alt);
+    color: var(--primary-white);
+}
+
+.tab-button.active {
+    background-color: var(--accent-color);
+    color: var(--primary-black);
+    border-color: var(--accent-color);
+    font-weight: 600;
+}
+
+#my-lists-content .content-item { /* Siyahıdakı elementlər üçün */
+    /* Mövcud .content-item stillərindən miras alır */
+}
+
+#my-lists-content .content-info { /* Məlumat blokuna silmə düyməsi əlavə etsək */
+    /* opacity: 1;  Siyahıda məlumat həmişə görünsün (istəyə bağlı) */
+    /* transform: translateY(0); */
+}
+
+.btn-remove-from-list {
+    background-color: rgba(204, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.btn-remove-from-list i {
+    font-size: 0.9em;
+}
+
+.btn-remove-from-list:hover {
+    background-color: rgba(204, 0, 0, 1);
+}
+
+/* ... (mövcud CSS kodlarınız) ... */
+
+/* --- Settings Page Specific Styles --- */
+.settings-page-container .section-title {
+    margin-bottom: 2rem;
+}
+
+.settings-sections .settings-section {
+    background-color: var(--dark-gray);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.settings-section h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--medium-gray-alt);
+    padding-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+.settings-section h3 i {
+    margin-right: 0.8rem;
+    font-size: 1.1em; /* İkon başlığa nisbətən biraz böyük olsun */
+}
+
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"], /* Ümumi input stilləri */
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: var(--medium-gray-alt);
+    border: 1px solid var(--dark-gray); /* Daha yumşaq border */
+    border-radius: 6px;
+    color: var(--primary-white);
+    font-size: 1rem;
+    font-family: var(--font-main);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.form-group input[type="email"]:disabled { /* E-poçt sahəsi üçün */
+    background-color: rgba(var(--medium-gray-alt-rgb, 58, 63, 68), 0.5); /* Rəngi var(--medium-gray-alt) ilə eyniləşdirmək üçün RGB lazımdır */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: var(--primary-black); /* Fokusda fonu dəyiş */
+    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.3);
+}
+
+.form-group-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    margin-right: 0.8rem;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-color); /* Checkbox rəngi */
+    cursor: pointer;
+}
+
+.form-group-checkbox label {
+    font-size: 0.95rem;
+    color: var(--light-gray);
+    cursor: pointer;
+    margin-bottom: 0; /* Label üçün alt boşluğu sıfırla */
+}
+
+.settings-section .btn { /* Hər bölmənin öz yadda saxlama düyməsi üçün */
+    margin-top: 0.5rem; /* Input ilə düymə arasında kiçik boşluq */
+}
+
+
+/* Settings səhifəsi üçün adaptivlik */
+@media (max-width: 768px) {
+    .settings-section {
+        padding: 1.2rem 1.5rem;
+    }
+    .settings-section h3 {
+        font-size: 1.15rem;
+    }
+    .form-group input, .form-group select {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* ... (mövcud CSS kodlarınız) ... */
+
+/* --- Movies Page Specific Styles --- */
+.movies-page-container .section-title {
+    margin-bottom: 1.5rem; /* Başlıqla filterlər arasında boşluq */
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap; /* Kiçik ekranlarda alt-alta düşsün */
+    gap: 1.5rem; /* Filter qrupları arasında boşluq */
+    margin-bottom: 2.5rem;
+    padding: 1rem;
+    background-color: rgba(var(--dark-gray-rgb, 31, 40, 51), 0.5); /* Arxa fonu biraz fərqli etdim */
+    border-radius: 8px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column; /* Label yuxarıda, select aşağıda */
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    font-weight: 500;
+}
+
+.filter-group select {
+    padding: 0.6rem 0.8rem;
+    background-color: var(--medium-gray-alt);
+    border: 1px solid var(--dark-gray);
+    border-radius: 6px;
+    color: var(--primary-white);
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    min-width: 180px; /* Select qutularının minimum eni */
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.3);
+}
+
+/* Filmlərin göstərildiyi grid üçün əlavə stil (əgər lazım olarsa) */
+#movies-grid.row-items {
+    /* Mövcud .row-items stilləri tətbiq olunacaq */
+    /* Lazım gələrsə, burada xüsusi dəyişikliklər edə bilərsiniz */
+}
+
+#movies-loading { /* Yüklənmə spinner-i üçün */
+    /* .loading klassının stilləri tətbiq olunacaq */
+    padding: 4rem 0; /* Yüklənmə zamanı daha çox boşluq */
+}
+
+/* Movies page responsive adjustments */
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column; /* Kiçik ekranlarda filterlər tamamilə alt-alta */
+        gap: 1rem;
+        padding: 0.8rem;
+    }
+    .filter-group select {
+        min-width: 100%; /* Kiçik ekranlarda select qutuları tam eni tutsun */
+    }
+     #movies-grid.row-items {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Mobil üçün daha kiçik kartlar */
+        gap: 1rem;
+    }
+}
+
+/* ... (mövcud CSS kodlarınız) ... */
+
+/* --- Series Page Specific Styles (əgər lazım olarsa) --- */
+.series-page-container .section-title {
+    /* Xüsusi bir fərqlilik yoxdursa, movies-page-container ilə eyni görünəcək */
+}
+
+#series-grid.row-items {
+    /* Mövcud .row-items stilləri tətbiq olunacaq */
+}
+
+#series-loading {
+    padding: 4rem 0;
+}
+
+/* ... (mövcud CSS kodlarınız) ... */
+
+/* --- New Releases Page Specific Styles (əgər lazım olarsa) --- */
+.new-releases-page-container .section-title {
+    /* Xüsusi bir fərqlilik yoxdursa, digər səhifələrlə eyni görünəcək */
+}
+
+#new-releases-grid.row-items {
+    /* Mövcud .row-items stilləri tətbiq olunacaq */
+}
+
+#new-releases-loading {
+    padding: 4rem 0;
+}
+
+/* ... (mövcud CSS kodlarınız) ... */
+
+/* --- Live TV Page Specific Styles (əgər lazım olarsa) --- */
+.live-tv-page-container .section-title {
+    margin-bottom: 2rem; /* Başlıqla kanallar arasında boşluq */
+}
+
+#live-tv-grid.live-channels {
+    /* Mövcud .live-channels stilləri tətbiq olunacaq */
+    /* Əgər ana səhifədəki bölmədən fərqli bir düzülüş istəyirsinizsə, burada dəyişə bilərsiniz */
+    /* Məsələn, sütun sayını və ya boşluqları: */
+    /* grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); */
+    /* gap: 2rem; */
+}
+
+#live-tv-loading {
+    padding: 4rem 0; /* Yüklənmə zamanı daha çox boşluq */
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mənim Siyahılarım - Soul TV</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css"> </head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://5000-i3miwxc7qluosrsbo3mh6-2e2b5a6d.manus.computer/static/images/logo.svg" alt="Soul TV Logo">
+                <h1>SOUL TV</h1>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Səhifə</a></li>
+                <li><a href="#">Filmlər</a></li>
+                <li><a href="#">Seriallar</a></li>
+                <li><a href="#">Canlı TV</a></li>
+                <li><a href="#">Yeni</a></li>
+            </ul>
+            
+            <div class="search-profile">
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Axtar...">
+                </div>
+                
+                <div class="profile-menu">
+                    <img src="https://via.placeholder.com/35x35/cccccc/000000?text=U" alt="Profil" class="profile-img">
+                    
+                    <div class="profile-dropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>Profilim</span>
+                        </a>
+                        <a href="lists.html" class="dropdown-item active"> <i class="fas fa-bookmark"></i>
+                            <span>Siyahılarım</span>
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Tənzimləmələr</span>
+                        </a>
+                        <a href="#" class="dropdown-item" id="logout-button">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Çıxış</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container lists-page-container">
+        <h2 class="section-title">Mənim Siyahılarım</h2>
+        
+        <div class="tabs-container" style="margin-bottom: 2rem; border-bottom: 1px solid var(--medium-gray-alt); padding-bottom: 1rem;">
+            <button class="tab-button active" data-list-type="watchlist">İzləmə Siyahım</button>
+            <button class="tab-button" data-list-type="favorites">Bəyəndiklərim</button>
+        </div>
+
+        <div id="my-lists-content" class="row-items">
+            </div>
+        <p id="empty-list-message" style="text-align:center; color: var(--accent-gray); padding: 2rem; display:none;">Bu siyahı boşdur.</p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                     <img src="https://5000-i3miwxc7qluosrsbo3mh6-2e2b5a6d.manus.computer/static/images/logo.svg" alt="Soul TV Logo">
+                    <h2>SOUL TV</h2>
+                </div>
+                <p>Ən yaxşı film və seriallar bir platformada.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Naviqasiya</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Səhifə</a></li>
+                    <li><a href="#">Filmlər</a></li>
+                    <li><a href="#">Seriallar</a></li>
+                    <li><a href="#">Canlı TV</a></li>
+                    <li><a href="#">Yeni</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kateqoriyalar</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Komediya</a></li>
+                    <li><a href="#">Dram</a></li>
+                    <li><a href="#">Fantastika</a></li>
+                    <li><a href="#">Triller</a></li>
+                    <li><a href="#">Sənədli</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Haqqımızda</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Şirkət</a></li>
+                    <li><a href="#">Əlaqə</a></li>
+                    <li><a href="#">Karyera</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Şərtlər</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Soul TV. Bütün hüquqlar qorunur.
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script> 
+</body>
+</html>

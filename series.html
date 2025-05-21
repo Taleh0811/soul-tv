@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bütün Seriallar - Soul TV</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://5000-i3miwxc7qluosrsbo3mh6-2e2b5a6d.manus.computer/static/images/logo.svg" alt="Soul TV Logo">
+                <h1>SOUL TV</h1>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Səhifə</a></li>
+                <li><a href="movies.html">Filmlər</a></li>
+                <li><a href="series.html" class="active">Seriallar</a></li> <li><a href="live_tv.html">Canlı TV</a></li> 
+                <li><a href="new_releases.html">Yeni</a></li>
+            </ul>
+            
+            <div class="search-profile">
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Axtar...">
+                </div>
+                
+                <div class="profile-menu">
+                    <img src="https://via.placeholder.com/35x35/cccccc/000000?text=U" alt="Profil" class="profile-img">
+                    <div class="profile-dropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            <span>Profilim</span>
+                        </a>
+                        <a href="lists.html" class="dropdown-item">
+                            <i class="fas fa-bookmark"></i>
+                            <span>Siyahılarım</span>
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Tənzimləmələr</span>
+                        </a>
+                        <a href="#" class="dropdown-item" id="logout-button">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Çıxış</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container series-page-container">
+        <h2 class="section-title">Bütün Seriallar</h2>
+
+        <section class="filter-controls">
+            <div class="filter-group">
+                <label for="series-genre-filter">Janr üzrə filter:</label>
+                <select id="series-genre-filter">
+                    <option value="all">Bütün Janrlar</option>
+                    </select>
+            </div>
+            <div class="filter-group">
+                <label for="series-year-filter">İl üzrə filter:</label>
+                <select id="series-year-filter">
+                    <option value="all">Bütün İllər</option>
+                    </select>
+            </div>
+        </section>
+
+        <div id="series-grid" class="row-items">
+            </div>
+        <p id="no-series-message" style="text-align:center; color: var(--accent-gray); padding: 3rem; display:none; font-size: 1.1rem;">
+            Təəssüf ki, seçilmiş filterlərə uyğun serial tapılmadı.
+        </p>
+        <div id="series-loading" class="loading" style="display: none;">
+            <div class="loading-spinner"></div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                     <img src="https://5000-i3miwxc7qluosrsbo3mh6-2e2b5a6d.manus.computer/static/images/logo.svg" alt="Soul TV Logo">
+                    <h2>SOUL TV</h2>
+                </div>
+                <p>Ən yaxşı film və seriallar bir platformada.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+             <div class="footer-section">
+                <h3>Naviqasiya</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Ana Səhifə</a></li>
+                    <li><a href="movies.html">Filmlər</a></li>
+                    <li><a href="series.html">Seriallar</a></li>
+                    <li><a href="live_tv.html">Canlı TV</a></li>
+                    <li><a href="new_releases.html">Yeni</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kateqoriyalar</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Komediya</a></li>
+                    <li><a href="#">Dram</a></li>
+                    <li><a href="#">Fantastika</a></li>
+                    <li><a href="#">Triller</a></li>
+                    <li><a href="#">Sənədli</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Haqqımızda</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Şirkət</a></li>
+                    <li><a href="#">Əlaqə</a></li>
+                    <li><a href="#">Karyera</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Şərtlər</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Soul TV. Bütün hüquqlar qorunur.
+        </div>
+    </footer>
+
+    <div class="modal" id="video-modal">
+        <div class="modal-content">
+            <div class="modal-close"><i class="fas fa-times"></i></div>
+            <div class="video-player" id="video-player"></div>
+            <div class="modal-info-panel">
+                <h2 id="video-title">Video Başlığı</h2>
+                <p id="video-description">Video təsviri burada olacaq.</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="live-modal">
+         <div class="modal-content">
+            <div class="modal-close"><i class="fas fa-times"></i></div>
+            <div class="video-player" id="live-player"></div>
+            <div class="modal-info-panel">
+                <h2 id="live-title">Kanal Adı</h2>
+                <p id="live-program">Cari proqram burada olacaq.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/main.js"></script> 
+</body>
+</html>
